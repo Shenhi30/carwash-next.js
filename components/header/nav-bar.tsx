@@ -7,9 +7,9 @@ export default function navBar() {
 
     return (
         <>
-         <Link href="../../app"> Home </Link>
-         <Link href="../../app/Services">Services </Link>
-         <Link href="../../app/Booking"> Booking </Link>
+         <Link href="/app"> Home </Link>
+         <Link href="/Services">Services </Link>
+         <Link href="/Booking"> Booking </Link>
         
         </>
     )
