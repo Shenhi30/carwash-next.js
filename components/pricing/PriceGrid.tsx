@@ -2,10 +2,9 @@
 
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/services/api'
-//import
+import ServiceCard from './ServiceCard'
 import { motion } from 'framer-motion'
 import styles from './Pricing.module.scss'
-import { ServicePrice } from '../../types/types';
 
 interface Props {
     selectedCarId: number;

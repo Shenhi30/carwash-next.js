@@ -1,94 +1,177 @@
 @import '../../styles/variables.scss';
 
-// Tabs Styling
+// --- 1. Section Layout ---
+.pricingSection {
+    padding: $spacing-xl 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.sectionHeader {
+    margin-bottom: $spacing-lg;
+
+    h2 {
+        font-size: clamp(2rem, 5vw, 3.5rem); // Responsive large heading
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: $spacing-sm;
+        letter-spacing: -0.02em;
+    }
+
+    p {
+        color: $text-muted;
+        font-size: 1.125rem;
+        max-width: 600px;
+    }
+}
+
+// --- 2. Navigation Tabs (Car Types) ---
 .tabsContainer {
     display: flex;
-    gap: $spacing-md;
-    border-bottom: 1px solid $card-border;
+    gap: $spacing-xs;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 6px;
+    border-radius: $radius-lg;
+    width: fit-content;
+    border: 1px solid $card-border;
     margin-bottom: $spacing-lg;
-    overflow-x: auto;
-    padding-bottom: 4px;
 }
 
 .tabButton {
-    background: none;
+    background: transparent;
     border: none;
     color: $text-muted;
-    padding: $spacing-sm $spacing-md;
-    font-size: 1rem;
+    padding: 12px 24px;
+    font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
+    border-radius: $radius-md;
     position: relative;
-    white-space: nowrap;
     transition: color 0.3s ease;
-
-    &:hover {
-        color: $text-main;
-    }
+    z-index: 1;
 
     &.active {
+        color: $bg-dark; // Text becomes dark on white background
+        font-weight: 600;
+    }
+
+    &:hover:not(.active) {
         color: $text-main;
     }
 }
 
 .activeIndicator {
     position: absolute;
-    bottom: -4px;
+    top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background-color: $text-main;
+    bottom: 0;
+    background-color: $text-main; // Solid white pill like Figma
+    border-radius: $radius-md;
+    z-index: -1;
 }
 
-// Grid & Cards Styling
+// --- 3. The Grid ---
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: $spacing-md;
 }
 
+// --- 4. Service Card ---
 .card {
     background-color: $card-bg;
     border: 1px solid $card-border;
-    border-radius: $radius-md;
+    border-radius: $radius-xl;
     padding: $spacing-md;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    transition: all 0.3s ease;
+
+    // --- Add these explicit declarations ---
+
+    .cardHeader {
+        display: flex;
+        align-items: center;
+        margin-bottom: $spacing-sm;
+        // This ensures your icon has space
+    }
+
+    .cardBody {
+        flex-grow: 1; // This is the "magic" property
+        // It pushes the footer/price to the very bottom 
+        // even if the service name is short!
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .cardFooter {
+        margin-top: $spacing-md;
+        padding-top: $spacing-sm;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        background-color: #1a1a1a;
+        transform: translateY(-4px);
+    }
 }
 
 .checkIcon {
-    color: #22c55e; // Green checkmark like your Figma
+    color: $accent-green;
+    background: rgba($accent-green, 0.1);
+    padding: 6px;
+    border-radius: 50%;
     margin-bottom: $spacing-sm;
 }
 
 .serviceName {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: $spacing-xs;
+    color: $text-main;
 }
 
 .serviceDesc {
     color: $text-muted;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
 }
 
 .cardFooter {
     margin-top: auto;
     padding-top: $spacing-md;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .priceLabel {
     color: $text-muted;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .priceValue {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    color: $text-main;
+}
+
+// --- 5. States ---
+.loader {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-xl;
+    color: $text-muted;
+    font-style: italic;
 }
