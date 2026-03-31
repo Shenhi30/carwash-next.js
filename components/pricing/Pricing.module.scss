@@ -1,0 +1,94 @@
+@import '../../styles/variables.scss';
+
+// Tabs Styling
+.tabsContainer {
+    display: flex;
+    gap: $spacing-md;
+    border-bottom: 1px solid $card-border;
+    margin-bottom: $spacing-lg;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.tabButton {
+    background: none;
+    border: none;
+    color: $text-muted;
+    padding: $spacing-sm $spacing-md;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $text-main;
+    }
+
+    &.active {
+        color: $text-main;
+    }
+}
+
+.activeIndicator {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: $text-main;
+}
+
+// Grid & Cards Styling
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: $spacing-md;
+}
+
+.card {
+    background-color: $card-bg;
+    border: 1px solid $card-border;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.checkIcon {
+    color: #22c55e; // Green checkmark like your Figma
+    margin-bottom: $spacing-sm;
+}
+
+.serviceName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.serviceDesc {
+    color: $text-muted;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.cardFooter {
+    margin-top: auto;
+    padding-top: $spacing-md;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.priceLabel {
+    color: $text-muted;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.priceValue {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
