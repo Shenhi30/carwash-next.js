@@ -19,7 +19,7 @@ export default function ServiceCard({ service }: Props) {
             className={styles.card}
         >
             <div className={styles.cardHeader}>
-                <CheckCircle2 size={20} className={styles.checkIcon } />
+                <CheckCircle2 size={24} className={styles.checkIcon } />
             </div>
 
             <div className={styles.cardBody}>
@@ -32,7 +32,7 @@ export default function ServiceCard({ service }: Props) {
             <div className={styles.cardFooter}>
                 <span className={styles.priceLabel}>Ціна</span>
                 <span className={styles.priceValue}>
-                    {isStarting ? 'від' : ''}{priceDisplay} ₴
+                    {isStarting ? 'від ' : ''}{priceDisplay} ₴
                 </span>
             </div>
         </motion.div>

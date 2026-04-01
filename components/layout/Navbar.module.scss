@@ -1,0 +1,110 @@
+// src/components/layout/Layout.module.scss
+@import '../../styles/variables.scss';
+
+// --- NAVBAR ---
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: rgba(#0a0a0a, 0.8); // Semi-transparent dark bg
+    backdrop-filter: blur(12px); // The Apple-style glass blur
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.navContainer {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    color: $text-main;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+
+    .logoIcon {
+        color: $accent-green;
+    }
+}
+
+.contactBtn {
+    background-color: $text-main;
+    color: $bg-dark;
+    border: none;
+    padding: 10px 20px;
+    border-radius: $radius-sm;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+}
+
+// --- FOOTER ---
+.footer {
+    background-color: #050505; // Slightly darker than the main background
+    border-top: 1px solid $card-border;
+    padding: $spacing-xl 5% $spacing-md;
+    margin-top: $spacing-xl;
+}
+
+.footerGrid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
+}
+
+.footerCol {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    h4 {
+        color: $text-main;
+        font-size: 1.1rem;
+        margin-bottom: $spacing-xs;
+    }
+
+    p {
+        color: $text-muted;
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        font-size: 0.95rem;
+    }
+}
+
+.footerIcon {
+    color: $text-muted;
+    flex-shrink: 0;
+}
+
+.copyright {
+    text-align: center;
+    color: $text-muted;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: $spacing-md;
+}
