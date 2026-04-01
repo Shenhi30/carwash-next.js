@@ -18,9 +18,6 @@ export default function ServiceCard({ service }: Props) {
             animate={{ opacity: 1, y: 0 }}
             className={styles.card}
         >
-            <div className={styles.cardHeader}>
-                <CheckCircle2 size={24} className={styles.checkIcon } />
-            </div>
 
             <div className={styles.cardBody}>
                 <h3 className={styles.serviceName}>{service.service_name}</h3>

@@ -33,11 +33,25 @@
     background-color: rgba(255, 255, 255, 0.03);
     padding: 6px;
     border-radius: $radius-lg;
+
+    // Make it responsive for mobile
     width: fit-content;
+    max-width: 100%; // Prevents it from breaking the screen width
+
+    // Enable smooth horizontal scrolling
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; // Makes swiping smooth on iPhones
+
     border: 1px solid $card-border;
     margin-bottom: $spacing-lg;
-}
 
+    // HIDE THE SCROLLBAR (Looks much cleaner)
+    scrollbar-width: none; // For Firefox
+
+    &::-webkit-scrollbar {
+        display: none; // For Chrome, Safari, and Edge
+    }
+}
 .tabButton {
     background: transparent;
     border: none;
@@ -51,8 +65,12 @@
     transition: color 0.3s ease;
     z-index: 1;
 
+    // CRITICAL FOR MOBILE: Prevents the button from squishing
+    flex-shrink: 0;
+    white-space: nowrap; // Keeps long names like "Універсал / Кроссовер" on one line
+
     &.active {
-        color: $bg-dark; // Text becomes dark on white background
+        color: $bg-dark;
         font-weight: 600;
     }
 

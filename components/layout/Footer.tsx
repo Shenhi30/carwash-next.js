@@ -11,6 +11,10 @@ export function Footer() {
                 <div className={styles.footerCol}>
                     <h4>Car.wash Detailing</h4>
                 </div>
+
+                <div className={styles.footerCol}>
+
+                </div>
             </div>
         </footer>
     )
