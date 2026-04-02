@@ -23,7 +23,7 @@ export function Footer() {
                         м. Київ, вул. Протасів Яр, 3
                     </p>
                     <p><Clock size={18} className={styles.footerIcon} />
-                        Пн-Нд: 08:00 - 20:00
+                        Пн-Нд: 08:00 - 22:00
                     </p>
                 </div>
 
