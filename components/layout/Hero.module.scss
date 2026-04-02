@@ -1,0 +1,98 @@
+// src/components/layout/Hero.module.scss
+@import '../../styles/variables.scss';
+
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: $spacing-xl 5%;
+    overflow: hidden;
+
+    // A premium dark gradient background
+    background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, $bg-dark 70%);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: $text-muted;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); // Scales perfectly on mobile and desktop
+    font-weight: 800;
+    line-height: 1.1;
+    color: $text-main;
+    margin-bottom: $spacing-md;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    color: $accent-green; // Uses your brand green for emphasis
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: $text-muted;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto $spacing-lg;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: $spacing-sm;
+    justify-content: center;
+    flex-wrap: wrap; // Allows buttons to stack neatly on small phones
+}
+
+.primaryBtn {
+    background-color: $text-main;
+    color: $bg-dark;
+    border: none;
+    padding: 16px 32px;
+    border-radius: $radius-sm;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.secondaryBtn {
+    background-color: transparent;
+    color: $text-main;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 32px;
+    border-radius: $radius-sm;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+}

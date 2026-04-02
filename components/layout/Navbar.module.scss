@@ -101,10 +101,45 @@
     flex-shrink: 0;
 }
 
+.contactLink {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    color: $text-muted; // Starts as the same gray as other text
+    text-decoration: none; // Removes the underline
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $text-main; // Turns white when hovered
+    }
+
+    .footerIcon {
+        color: $accent-green; // Keep the icon green to show it's "active"
+    }
+}
+
 .copyright {
     text-align: center;
     color: $text-muted;
     font-size: 0.85rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: $spacing-md;
+}
+
+.mapContainer {
+    width: 100%;
+    height: 180px; // Keeps the map neat and compact
+    border-radius: $radius-md;
+    overflow: hidden; // Ensures the iframe corners are clipped
+    border: 1px solid $card-border;
+    background-color: #111; // Dark placeholder while it loads
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        // CSS trick to make the map look slightly darker to match the dark theme
+        filter: contrast(1.1) opacity(0.9);
+    }
 }

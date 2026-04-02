@@ -1,0 +1,78 @@
+@import '../../styles/variables.scss';
+
+// --- Headings ---
+.headingContainer {
+    margin-bottom: $spacing-lg;
+
+    &.center {
+        text-align: center;
+
+        .accentLine {
+            margin: 12px auto 0;
+        }
+    }
+}
+
+.title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: $text-main;
+    letter-spacing: -0.01em;
+}
+
+.subtitle {
+    color: $text-muted;
+    margin-top: 8px;
+    font-size: 1.1rem;
+}
+
+.accentLine {
+    width: 60px;
+    height: 4px;
+    background-color: $accent-green;
+    margin-top: 12px;
+    border-radius: 2px;
+}
+
+// --- Buttons ---
+.btn {
+    padding: 12px 28px;
+    border-radius: $radius-sm;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.primary {
+    background-color: $text-main;
+    color: $bg-dark;
+
+    &:hover {
+        background-color: #e0e0e0;
+    }
+}
+
+.secondary {
+    background-color: $accent-green;
+    color: $bg-dark;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.outline {
+    background-color: transparent;
+    color: $text-main;
+    border-color: rgba(255, 255, 255, 0.2);
+
+    &:hover {
+        border-color: $text-main;
+        background: rgba(255, 255, 255, 0.05);
+    }
+}

@@ -1,5 +1,4 @@
 'use client'
-import { CheckCircle2 } from "lucide-react"
 import { motion } from 'framer-motion';
 import { ServicePrice } from "@/types/types";
 import styles from './Pricing.module.scss'
