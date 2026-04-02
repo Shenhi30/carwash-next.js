@@ -5,7 +5,7 @@ import CarTypeTabs from '@/components/pricing/CarTypeTabs';
 import PriceGrid from '@/components/pricing/PriceGrid';
 import styles from '@/components/pricing/Pricing.module.scss';
 import { SectionHeader } from '@/components/ui/SectionHeading';
-import { Hero } from '@/components/layout/hero';
+import { Hero } from '@/components/layout/Hero';
 
 export default function Home() {
   const [selectedCarId, setSelectedCarId] = useState(1); // Default to 'Седан'

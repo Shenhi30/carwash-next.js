@@ -4,6 +4,20 @@ import { motion } from "framer-motion"
 import styles from './Hero.module.scss'
 
 export function Hero() {
+    const handleContactClick = () => {
+  // Перевіряємо, чи це мобільний пристрій (спрощений варіант)
+  const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // Якщо телефон — відкриваємо набір номера
+    window.location.href = 'tel:+380991234567';
+  } else {
+    // Якщо комп'ютер — плавно скролимо до футера
+    const footer = document.querySelector('footer');
+    footer?.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
     return (
         <section className={styles.hero}>
             <div className={styles.heroContent}>
@@ -21,7 +35,12 @@ export function Hero() {
                         Професійна мийка, хімчистка та полірування
                     </p>
                     <div className={styles.buttonGroup}>
-                        <button className={styles.primaryBtn}>Записатись онлайн</button>
+                        <button
+                            className={styles.primaryBtn}
+                            onClick={handleContactClick}
+                        >
+                            Записатись онлайн
+                        </button>
                     </div>    
                 </motion.div>
             </div>
