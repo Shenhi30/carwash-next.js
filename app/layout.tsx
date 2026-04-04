@@ -3,6 +3,7 @@ import "./globals.scss";
 import Providers from "@/components/providers/Providers";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { Analytics } from '@vercel/analytics/next';
 
 export default function RootLayout({
   children,
@@ -22,6 +23,7 @@ export default function RootLayout({
           <Footer />
           <ScrollToTop />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
