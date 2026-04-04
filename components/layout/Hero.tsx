@@ -10,7 +10,7 @@ export function Hero() {
 
   if (isMobile) {
     // Якщо телефон — відкриваємо набір номера
-    window.location.href = 'tel:+380991234567';
+    window.location.href = 'tel:+380685865116';
   } else {
     // Якщо комп'ютер — плавно скролимо до футера
     const footer = document.querySelector('footer');
